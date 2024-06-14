@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/Style/Rectangle.css" th:href="@{/Style/Rectangle.css}">
+    <script type="text/javascript" src="../static/Scripts/Rectangle.js" th:src="@{/Scripts/Rectangle.js}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="rectangle" th:style="'width: ' + ${rectangle.width} + 'px; height: ' + ${rectangle.height} + 'px; background-color: ' + ${rectangle.colour} + ';'"></div>
+        <div class="details">
+            <p th:text="'Name: ' + ${rectangle.name}"></p>
+            <p th:text="'Id: ' + ${rectangle.id}"></p>
+            <p th:text="'Width: ' + ${rectangle.width}"></p>
+            <p th:text="'Height: ' + ${rectangle.height}"></p>
+            <p th:text="'Colour: ' + ${rectangle.colour}"></p>
+        </div>
+        <button class="Button" th:onclick="'edit(\'' + ${rectangle.id} + '\')'">Edit</button>
+        <button class="Button" onclick="done()">Done</button>
+    </div>
+</body>
+</html>

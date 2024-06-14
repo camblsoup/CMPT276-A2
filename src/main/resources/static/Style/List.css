@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 .DeleteButton {
     background-color: transparent;
     color: red;
@@ -12,16 +14,6 @@
     text-decoration: underline;
 }
 
-h3 {
-    text-align: center;
-}
-
-table {
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .ColourContainer {
     display: flex;
     flex-direction: row;
@@ -30,21 +22,113 @@ table {
     align-items: center;
 }
 
-.ColourHeader {
-}
-
 .NameButton {
     margin-right: 150px;
+    padding: 0;
     border: none;
     background-color: transparent;
+    width: max-content;
+    min-width: 440px;
+    text-align: left;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .NameButton:hover {
+    cursor: pointer;
     color: blue;
     text-decoration: underline;
 }
 
 .ListBox {
-    align-self: center;
-    align-content: center;
+    width: min-content;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    margin-top: 5px;
+}
+
+.tableContent {
+    border-top: 1px solid #e0e0e0;
+}
+
+.colourBox {
+    width: 15px;
+    height: 15px;
+    border-radius: 4px;
+}
+
+.createRect {
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: #7c98fc;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.createRect:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+th {
+    font-weight: 550;
+    font-size: 16px;
+    color: #989898;
+    height: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr {
+    font-weight: 350;
+    font-size: 15px;
+    min-width: 728px;
+}
+
+td {
+    height: 40px;
+}
+
+p {
+    margin: 0;
+}
+
+h3 {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+}
+
+table {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin-bottom: 70px;
+    min-width: 728px;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 5px 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+html {
+    min-height: 100vh;
 }

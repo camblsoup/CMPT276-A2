@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <title>Rectangle List</title>
     <link rel="stylesheet" href="../static/Style/List.css" th:href="@{/Style/List.css}">
+    <script type="text/javascript" src="../static/Scripts/List.js" th:src="@{/Scripts/List.js}" defer></script>
 </head>
 <body>
     <div class="ListBox">
         <h3>Created Rectangles</h3>
         <table>
             <tr>
-                <th>Name</th>
+                <th style="width: 590px">Name</th>
                 <th class="ColourHeader">Colour</th>
                 <th></th>
             </tr>
-            <tr th:each="rectangle:${rectangles}">
+            <tr class="tableContent" th:each="rectangle:${rectangles}">
                 <td>
-                    <button class="NameButton" th:text="${rectangle.name}"></button>
+                    <button class="NameButton" th:text="${rectangle.name}" th:onclick="'redirectToViewRectangle(\'' + ${rectangle.id} + '\')'"></button>
                 </td>
                 <td class="ColourContainer">
-                    <div th:style="'width: 20px; height: 20px; background-color: ' + ${rectangle.colour}"></div>
+                    <div class="colourBox" th:style="'background-color: ' + ${rectangle.colour}"></div>
                     <p th:text="${rectangle.colour}"></p>
                 </td>
-                <td><button class="DeleteButton">X</button></td>
+                <td><button class="DeleteButton" th:onclick="'deleteRect(\'' + ${rectangle.id} + '\')'">X</button></td>
             </tr>
         </table>
+        <button class="createRect" onclick="createRect()">New Rectangle</button>
     </div>
 </body>
 </html>
