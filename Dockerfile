@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:21-jdk-slim
-COPY --from=build /target/CMPT276-A2-SNAPSHOT.jar CMPT276-A2.jar
+COPY --from=build /target/CMPT276A2-SNAPSHOT.jar CMPT276A2.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "CMPT-A2.jar"]
+ENTRYPOINT ["java", "-jar", "CMPTA2.jar"]
