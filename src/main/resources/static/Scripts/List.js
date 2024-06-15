@@ -15,5 +15,5 @@ function deleteRect(id) {
 }
 
 function createRect() {
-    window.location.href = '/addRectangle';
+    window.location.href = '/add';
 }

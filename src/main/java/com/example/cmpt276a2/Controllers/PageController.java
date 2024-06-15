@@ -20,12 +20,12 @@ public class PageController {
         return "redirect:/view";
     }
 
-    @GetMapping("/addRectangle")
+    @GetMapping("/add")
     public String addRectangle() {
         return "AddRectangle";
     }
 
-    @PostMapping("/addRectangle")
+    @PostMapping("/add")
     public String addRectangle(@RequestParam Map<String, String> data) {
         String name = data.get("Name");
         int width = Integer.parseInt(data.get("Width"));
