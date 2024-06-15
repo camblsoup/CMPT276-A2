@@ -69,3 +69,10 @@ button:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+
+#rectangle {
+    transition:
+            width 500ms,
+            height 500ms,
+            background-color 500ms;
+}
