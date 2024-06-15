@@ -2,29 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${rectangle.getName()}"></title>
+    <link id="favicon" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="../static/Style/Edit.css" th:href="@{/Style/Edit.css}">
     <script type="text/javascript" src="../static/Scripts/Edit.js" th:src="@{/Scripts/Edit.js}"></script>
 </head>
-<body>
+<body onload="favicon()">
 <div class="container">
     <div id="rectangle" th:style="'width: ' + ${rectangle.width} + 'px; height: ' + ${rectangle.height} + 'px; background-color: ' + ${rectangle.colour} + ';'"></div>
     <form class="details" th:action="${rectangle.id}" method="post">
         <div>
         <label for="Name">Name: </label>
-        <input type="text" id="Name" name="Name" th:value="${rectangle.name}">
+        <input type="text" id="Name" name="Name" th:value="${rectangle.name}" oninput="updateTitle()">
         </div>
         <div>
         <label for="Width">Width: </label>
-        <input type="number" id="Width" name="Width" th:value="${rectangle.width}" oninput="updateRectangle()">
+        <input type="number" id="Width" min="1" max="750" name="Width" th:value="${rectangle.width}" oninput="updateRectangle()">
         </div>
         <div>
         <label for="Height">Height: </label>
-        <input type="number" id="Height" name="Height" th:value="${rectangle.height}" oninput="updateRectangle()">
+        <input type="number" id="Height" min="1" max="750" name="Height" th:value="${rectangle.height}" oninput="updateRectangle()">
         </div>
         <div>
         <label for="Colour">Colour: </label>
-        <input type="color" id="Colour" name="Colour" th:value="${rectangle.colour}" oninput="updateRectangle()">
+        <input type="color" id="Colour" name="Colour" th:value="${rectangle.colour}" oninput="updateRectangle();favicon()">
         </div>
         <button type="submit" value="SEND">Save</button>
     </form>

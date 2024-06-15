@@ -26,7 +26,12 @@ public class PageController {
 
     @PostMapping("/addRectangle")
     public String addRectangle(@RequestParam Map<String, String> data) {
-        Rectangle rectangle = new Rectangle(data.get("Name"), Integer.parseInt(data.get("Width")), Integer.parseInt(data.get("Height")), data.get("Colour"));
+        String name = data.get("Name");
+        int width = Integer.parseInt(data.get("Width"));
+        int height = Integer.parseInt(data.get("Height"));
+        String colour = data.get("Colour");
+
+        Rectangle rectangle = new Rectangle(name, width, height, colour);
         rectangleRepo.save(rectangle);
         return "redirect:/";
     }
