@@ -1,6 +1,7 @@
 package com.example.cmpt276a2.Models;
 import jakarta.persistence.*;
 
+/* Class to store data about a rectangle stored in a database */
 @Entity
 @Table(name="rectangles")
 public class Rectangle {

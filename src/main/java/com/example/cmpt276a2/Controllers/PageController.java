@@ -16,6 +16,7 @@ public class PageController {
 
     @GetMapping("")
     public String home() {
+        // Redirects from the default url to the list
         return "redirect:/view";
     }
 
